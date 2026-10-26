@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
+    background-color: #f8fafc;
+    color: #0f172a;
+    padding: 15px;
+    line-height: 1.4;
+}
+
+/* Encabezado Principal */
+.header {
+    max-width: 1250px;
+    margin: 0 auto 16px auto;
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 16px 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header h1 {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.header p {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 3px;
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* Tarjetas de Resumen (Con los colores de las insignias del roadmap) */
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 14px 16px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.card h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.card .count {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 3px 0;
+}
+
+.card span {
+    font-size: 10px;
+    color: #475569;
+}
+
+/* Colores exactos de las tarjetas según versión */
+.card-mvp { border-top: 4px solid #0f172a; }
+.card-mvp h3 { color: #0f172a; }
+
+.card-v1 { border-top: 4px solid #334155; }
+.card-v1 h3 { color: #334155; }
+
+.card-v2 { border-top: 4px solid #475569; }
+.card-v2 h3 { color: #475569; }
+
+.card-vn { border-top: 4px solid #64748b; }
+.card-vn h3 { color: #64748b; }
+
+/* Secciones de las Tablas */
+.section-backlog {
+    background-color: #ffffff;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    padding: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.section-backlog h2 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.title-mvp { color: #0f172a; border-bottom-color: #0f172a !important; }
+.title-v1 { color: #334155; border-bottom-color: #334155 !important; }
+.title-v2 { color: #475569; border-bottom-color: #475569 !important; }
+.title-vn { color: #64748b; border-bottom-color: #64748b !important; }
+
+/* Contenedor de Tabla Adaptativo */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-responsive::-webkit-scrollbar {
+    height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border-radius: 3px;
+}
+
+/* Estilos de la Tabla Backlog */
+.backlog-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+    font-size: 11.5px;
+    text-align: left;
+}
+
+.backlog-table th {
+    background-color: #0f172a;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 8px 10px;
+    border-right: 1px solid #334155;
+    border-bottom: 2px solid #020617;
+    text-transform: uppercase;
+    font-size: 10.5px;
+    letter-spacing: 0.2px;
+}
+
+.backlog-table th:last-child {
+    border-right: none;
+}
+
+.backlog-table td {
+    padding: 9px 10px;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #cbd5e1;
+    vertical-align: top;
+    color: #1e293b;
+}
+
+.backlog-table td:last-child {
+    border-right: none;
+}
+
+.backlog-table tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* Celda de ID */
+.id-cell {
+    font-weight: 700;
+    color: #000000;
+    font-family: monospace;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Celda de Story Points */
+.sp-cell {
+    text-align: center;
+    font-weight: 700;
+    color: #0f172a;
+    background-color: #f8fafc;
+}
+
+/* Formato de Criterios de Aceptación */
+.happy {
+    color: #166534;
+    font-weight: 600;
+}
+
+.unhappy {
+    color: #991b1b;
+    font-weight: 600;
+}

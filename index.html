@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Backlog Completo - Tiendas Urbano</title>
+    <link rel="stylesheet" href="backlog-styles.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Product Backlog - Tiendas Urbano</h1>
+        <p>Proyecto de Transformación Digital &mdash; 52 Historias de Usuario / 25 Épicas</p>
+    </header>
+
+    <main class="container">
+
+        <!-- RESUMEN DE PUNTOS Y FASES -->
+        <section class="summary-cards">
+            <div class="card card-mvp">
+                <h3>MVP (Esencial)</h3>
+                <p class="count">12 HU</p>
+                <span>Operación base & Venta en Débito</span>
+            </div>
+            <div class="card card-v1">
+                <h3>V1 (Evolución)</h3>
+                <p class="count">17 HU</p>
+                <span>Bodega, B2B & Seguimiento</span>
+            </div>
+            <div class="card card-v2">
+                <h3>V2 (Marketing)</h3>
+                <p class="count">10 HU</p>
+                <span>Crédito, Fidelización & BI</span>
+            </div>
+            <div class="card card-vn">
+                <h3>VN (Escalabilidad)</h3>
+                <p class="count">13 HU</p>
+                <span>Seguridad HTTPS & Concurrencia</span>
+            </div>
+        </section>
+
+        <!-- SECCIÓN MVP -->
+        <section class="section-backlog">
+            <h2 class="title-mvp"> 1. Release MVP (Esencial — 12 Historias de Usuario)</h2>
+            <div class="table-responsive">
+                <table class="backlog-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 75px;">ID</th>
+                            <th style="width: 130px;">Épica</th>
+                            <th>Historia de Usuario (Formato Estándar)</th>
+                            <th>Criterios de Aceptación (Caso Feliz / Infeliz)</th>
+                            <th style="width: 50px;">SP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="id-cell">HU-01.1</td>
+                            <td>Gestión Cuenta</td>
+                            <td><strong>Como</strong> cliente comprador,<br><strong>quiero</strong> registrarme con mi
+                                correo y datos personales,<br><strong>para</strong> crear mi cuenta y comprar en la
+                                plataforma.</td>
+                            <td><span class="happy">✔ Feliz:</span> Registro exitoso y correo de bienvenida.<br><span
+                                    class="unhappy">✖ Infeliz:</span> Datos incompletos muestran alertas específicas por
+                                campo.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-03.2</td>
+                            <td>Autenticación</td>
+                            <td><strong>Como</strong> administrador del sistema,<br><strong>quiero</strong> que las
+                                contraseñas se almacenen cifradas (hash),<br><strong>para</strong> proteger los datos de
+                                los usuarios ante hackeos.</td>
+                            <td><span class="happy">✔ Feliz:</span> La BD guarda tokens encriptados y no texto
+                                plano.<br><span class="unhappy">✖ Infeliz:</span> Intento de inyección de código
+                                bloqueado por el sistema.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-07.1</td>
+                            <td>Catálogo</td>
+                            <td><strong>Como</strong> cliente comprador,<br><strong>quiero</strong> visualizar el
+                                catálogo de prendas de vestir,<br><strong>para</strong> seleccionar ropa femenina,
+                                parkas, chaquetas y trajes de baño.</td>
+                            <td><span class="happy">✔ Feliz:</span> Se despliega el catálogo con foto, descripción y
+                                precio actualizado.<br><span class="unhappy">✖ Infeliz:</span> Si falla la carga de
+                                fotos, se muestra imagen por defecto.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-09.1</td>
+                            <td>Carrito</td>
+                            <td><strong>Como</strong> cliente comprador,<br><strong>quiero</strong> agregar productos al
+                                carrito desde la ficha,<br><strong>para</strong> consolidar las prendas que voy a
+                                comprar.</td>
+                            <td><span class="happy">✔ Feliz:</span> El contador del carrito se actualiza y muestra el
+                                resumen.<br><span class="unhappy">✖ Infeliz:</span> Intento de agregar producto sin
+                                seleccionar talla bloquea la acción.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-11.2</td>
+                            <td>Admin Base</td>
+                            <td><strong>Como</strong> administrador de tienda,<br><strong>quiero</strong> actualizar
+                                centralizadamente el precio de los productos,<br><strong>para</strong> eliminar los
+                                errores en el valor de la cuenta final.</td>
+                            <td><span class="happy">✔ Feliz:</span> El cambio de precio se refleja de inmediato en
+                                catálogo y carrito.<br><span class="unhappy">✖ Infeliz:</span> No permite precios
+                                negativos ni campos vacíos.</td>
+                            <td class="sp-cell">2</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-12.1</td>
+                            <td>Pago & Ventas</td>
+                            <td><strong>Como</strong> administrador de tienda,<br><strong>quiero</strong> un registro
+                                oficial en base de datos de cada transacción,<br><strong>para</strong> asegurar que no
+                                existan ventas no registradas.</td>
+                            <td><span class="happy">✔ Feliz:</span> Cada compra genera un registro único con fecha, hora
+                                y detalle.<br><span class="unhappy">✖ Infeliz:</span> Si se interrumpe el proceso, la
+                                transacción no se consolida.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-12.2</td>
+                            <td>Post Venta</td>
+                            <td><strong>Como</strong> cliente comprador,<br><strong>quiero</strong> recibir un
+                                comprobante/boleta digital por correo,<br><strong>para</strong> tener el respaldo de mi
+                                pago inmediatamente.</td>
+                            <td><span class="happy">✔ Feliz:</span> Correo automático con PDF adjunto al confirmar
+                                pago.<br><span class="unhappy">✖ Infeliz:</span> Reintento automático de envío si falla
+                                el servidor de correo.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-14.3</td>
+                            <td>Pago & Confirmación</td>
+                            <td><strong>Como</strong> cliente comprador,<br><strong>quiero</strong> pagar con tarjeta de
+                                Débito (Webpay/Redcompra),<br><strong>para</strong> completar mi compra con el medio de
+                                pago más utilizado en Chile.</td>
+                            <td><span class="happy">✔ Feliz:</span> Transacción aprobada redirige a pantalla de
+                                éxito.<br><span class="unhappy">✖ Infeliz:</span> Transacción rechazada mantiene el
+                                carrito para reintentar.</td>
+                            <td class="sp-cell">8</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-16.1</td>
+                            <td>Bodega</td>
+                            <td><strong>Como</strong> encargado de bodega,<br><strong>quiero</strong> que el stock se
+                                descuente automáticamente al vender,<br><strong>para</strong> evitar sobreventas de
+                                prendas no disponibles.</td>
+                            <td><span class="happy">✔ Feliz:</span> El inventario disminuye en tiempo real tras la
+                                venta.<br><span class="unhappy">✖ Infeliz:</span> Si el stock llega a 0, deshabilita el
+                                botón "Comprar".</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-18.2</td>
+                            <td>Bodega</td>
+                            <td><strong>Como</strong> operario de bodega,<br><strong>quiero</strong> usar un checklist
+                                digital de verificación al empacar,<br><strong>para</strong> eliminar los reclamos por
+                                envío de contenido erróneo.</td>
+                            <td><span class="happy">✔ Feliz:</span> Marcado de prendas requeridas confirma empaque
+                                completo.<br><span class="unhappy">✖ Infeliz:</span> Bloqueo de etiquetado si falta
+                                algún ítem del pedido.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-20.2</td>
+                            <td>Despacho</td>
+                            <td><strong>Como</strong> repartidor / logístico,<br><strong>quiero</strong> consultar las
+                                rutas y direcciones en la app/web,<br><strong>para</strong> reemplazar el cuaderno
+                                físico y no perder direcciones.</td>
+                            <td><span class="happy">✔ Feliz:</span> Visualización ordenada de direcciones asignadas por
+                                comuna.<br><span class="unhappy">✖ Infeliz:</span> Acceso en modo offline a la última
+                                lista cargada.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-15.1</td>
+                            <td>Recepción</td>
+                            <td><strong>Como</strong> repartidor / logístico,<br><strong>quiero</strong> registrar el
+                                día y hora exacta en que entrego el paquete,<br><strong>para</strong> auditar el
+                                cumplimiento del servicio de despacho.</td>
+                            <td><span class="happy">✔ Feliz:</span> Botón "Entregado" guarda timestamp y firma/rut de
+                                recepción.<br><span class="unhappy">✖ Infeliz:</span> Obliga a ingresar motivo si el
+                                pedido fue rechazado/ausente.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN V1 -->
+        <section class="section-backlog">
+            <h2 class="title-v1"> 2. Release V1 (Evolución Operativa & B2B — 17 Historias de Usuario)</h2>
+            <div class="table-responsive">
+                <table class="backlog-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 75px;">ID</th>
+                            <th style="width: 130px;">Épica</th>
+                            <th>Historia de Usuario</th>
+                            <th>Criterios de Aceptación (Caso Feliz / Infeliz)</th>
+                            <th style="width: 50px;">SP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="id-cell">HU-01.2</td>
+                            <td>Autenticación</td>
+                            <td><strong>Como</strong> sistema,<br><strong>quiero</strong> validar que el correo no esté
+                                registrado previamente,<br><strong>para</strong> evitar cuentas duplicadas en el
+                                sistema.</td>
+                            <td><span class="happy">✔ Feliz:</span> Correo nuevo permite continuar.<br><span
+                                    class="unhappy">✖ Infeliz:</span> Muestra aviso "El correo ya está registrado,
+                                ¿desea iniciar sesión?".</td>
+                            <td class="sp-cell">2</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-02.1</td>
+                            <td>Gestión Cuenta</td>
+                            <td><strong>Como</strong> usuario empresa,<br><strong>quiero</strong> seleccionar si me
+                                registro como Persona Natural o Empresa,<br><strong>para</strong> ingresar datos de
+                                facturación (RUT/Razón Social).</td>
+                            <td><span class="happy">✔ Feliz:</span> Formulario se adapta según tipo de usuario.<br><span
+                                    class="unhappy">✖ Infeliz:</span> Validación de formato de RUT chileno evita
+                                registros inválidos.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-02.2</td>
+                            <td>Gestión Cuenta</td>
+                            <td><strong>Como</strong> cliente empresa (B2B),<br><strong>quiero</strong> tener un panel
+                                comercial especial,<br><strong>para</strong> realizar pedidos de ropa al por mayor.</td>
+                            <td><span class="happy">✔ Feliz:</span> Acceso a catálogo mayorista con precios según
+                                volumen.<br><span class="unhappy">✖ Infeliz:</span> Bloqueo de precios mayoristas a
+                                usuarios naturales.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-03.1</td>
+                            <td>Autenticación</td>
+                            <td><strong>Como</strong> cliente comprador,<br><strong>quiero</strong> solicitar la
+                                recuperación de mi contraseña vía correo,<br><strong>para</strong> volver a acceder si
+                                la he olvidado.</td>
+                            <td><span class="happy">✔ Feliz:</span> Recepción de enlace seguro con token de
+                                expiración.<br><span class="unhappy">✖ Infeliz:</span> Enlace expira a las 2 horas de no
+                                ser utilizado.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-04.1</td>
+                            <td>Gestión Cuenta</td>
+                            <td><strong>Como</strong> cliente comprador,<br><strong>quiero</strong> editar mis datos
+                                personales en mi perfil,<br><strong>para</strong> mantener actualizada mi información de
+                                contacto.</td>
+                            <td><span class="happy">✔ Feliz:</span> Actualización exitosa en base de datos.<br><span
+                                    class="unhappy">✖ Infeliz:</span> Cancelar edición revierte los cambios al estado
+                                original.</td>
+                            <td class="sp-cell">2</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-04.2</td>
+                            <td>Gestión Cuenta</td>
+                            <td><strong>Como</strong> cliente comprador,<br><strong>quiero</strong> guardar múltiples
+                                direcciones de envío,<br><strong>para</strong> elegir si despachar a mi domicilio o
+                                trabajo.</td>
+                            <td><span class="happy">✔ Feliz:</span> Selección de dirección predeterminada en el
+                                checkout.<br><span class="unhappy">✖ Infeliz:</span> Alerta al intentar eliminar la
+                                única dirección registrada.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-05.1</td>
+                            <td>Post Venta</td>
+                            <td><strong>Como</strong> cliente comprador,<br><strong>quiero</strong> consultar el
+                                historial de mis compras pasadas,<br><strong>para</strong> revisar qué productos he
+                                adquirido.</td>
+                            <td><span class="happy">✔ Feliz:</span> Lista ordenada cronológicamente con estados de
+                                entrega.<br><span class="unhappy">✖ Infeliz:</span> Muestra mensaje "Aún no realizas
+                                compras" si está vacío.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-05.2</td>
+                            <td>Post Venta</td>
+                            <td><strong>Como</strong> cliente comprador,<br><strong>quiero</strong> ver el detalle
+                                completo de una transacción histórica,<br><strong>para</strong> revisar productos,
+                                precios y comprobantes.</td>
+                            <td><span class="happy">✔ Feliz:</span> Desglose del pedido con opción de descargar
+                                boleta.<br><span class="unhappy">✖ Infeliz:</span> Si el pedido fue cancelado, muestra
+                                el motivo.</td>
+                            <td class="sp-cell">2</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-06.1</td>
+                            <td>Seguimiento</td>
+                            <td><strong>Como</strong> cliente comprador,<br><strong>quiero</strong> consultar el estado
+                                de mi pedido en tiempo real,<br><strong>para</strong> saber exactamente dónde se
+                                encuentra mi paquete.</td>
+                            <td><span class="happy">✔ Feliz:</span> Barra de estado (En preparación -> En camino ->
+                                Entregado).<br><span class="unhappy">✖ Infeliz:</span> Si se retrasa, muestra mensaje de
+                                reprogramación.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-06.2</td>
+                            <td>Seguimiento</td>
+                            <td><strong>Como</strong> cliente comprador,<br><strong>quiero</strong> recibir
+                                notificaciones de cambios en la entrega,<br><strong>para</strong> estar informado si hay
+                                demoras.</td>
+                            <td><span class="happy">✔ Feliz:</span> Envío automático de correo al cambiar de
+                                estado.<br><span class="unhappy">✖ Infeliz:</span> Opción de desactivar notificaciones
+                                secundarias.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-07.2</td>
+                            <td>Exploración</td>
+                            <td><strong>Como</strong> cliente comprador,<br><strong>quiero</strong> filtrar prendas por
+                                talla, color, categoría y precio,<br><strong>para</strong> encontrar más rápido la ropa
+                                que busco.</td>
+                            <td><span class="happy">✔ Feliz:</span> Filtrado instantáneo sin recargar la
+                                página.<br><span class="unhappy">✖ Infeliz:</span> Muestra "Sin resultados" proponiendo
+                                limpiar filtros.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-09.2</td>
+                            <td>Carrito</td>
+                            <td><strong>Como</strong> cliente comprador,<br><strong>quiero</strong> modificar cantidades
+                                o eliminar ítems del carrito,<br><strong>para</strong> ajustar mi pedido antes de pagar.
+                            </td>
+                            <td><span class="happy">✔ Feliz:</span> Actualización en tiempo real del monto
+                                total.<br><span class="unhappy">✖ Infeliz:</span> Confirmación requerida antes de vaciar
+                                el carrito por completo.</td>
+                            <td class="sp-cell">2</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-11.1</td>
+                            <td>Admin Base</td>
+                            <td><strong>Como</strong> administrador de catálogo,<br><strong>quiero</strong> crear nuevos
+                                productos adjuntando fotografías,<br><strong>para</strong> publicar las nuevas
+                                colecciones importadas.</td>
+                            <td><span class="happy">✔ Feliz:</span> Carga y optimización automática de
+                                imágenes.<br><span class="unhappy">✖ Infeliz:</span> Rechazo de archivos que superen los
+                                5MB o formato no válido.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-13.1</td>
+                            <td>Bodega</td>
+                            <td><strong>Como</strong> sistema,<br><strong>quiero</strong> generar una orden interna de
+                                pedido para bodega,<br><strong>para</strong> iniciar la preparación en cuanto se
+                                confirme el pago.</td>
+                            <td><span class="happy">✔ Feliz:</span> Orden enviada automáticamente a la pantalla del
+                                bodeguero.<br><span class="unhappy">✖ Infeliz:</span> Notificación de alerta si la orden
+                                queda estancada > 2 horas.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-13.2</td>
+                            <td>Bodega</td>
+                            <td><strong>Como</strong> bodeguero,<br><strong>quiero</strong> un panel con la lista de
+                                pedidos pendientes por armar,<br><strong>para</strong> priorizar según antigüedad y tipo
+                                de despacho.</td>
+                            <td><span class="happy">✔ Feliz:</span> Vista de tarjetas clasificadas por
+                                urgencia.<br><span class="unhappy">✖ Infeliz:</span> Filtro de órdenes bloqueadas por
+                                falta de stock.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-14.1</td>
+                            <td>Pago & Logística</td>
+                            <td><strong>Como</strong> sistema,<br><strong>quiero</strong> calcular el costo de despacho
+                                automáticamente según la comuna/región,<br><strong>para</strong> cobrar el valor
+                                correcto de envío.</td>
+                            <td><span class="happy">✔ Feliz:</span> Tarifa asignada según tabla de valores por
+                                ubicación.<br><span class="unhappy">✖ Infeliz:</span> Alerta "Zona sin cobertura" para
+                                direcciones remotas.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-14.4</td>
+                            <td>Pago</td>
+                            <td><strong>Como</strong> cliente empresa (B2B),<br><strong>quiero</strong> pagar mediante
+                                transferencia bancaria,<br><strong>para</strong> realizar compras mayoristas sin
+                                comisiones de tarjeta.</td>
+                            <td><span class="happy">✔ Feliz:</span> Despliegue de datos bancarios y carga de
+                                comprobante.<br><span class="unhappy">✖ Infeliz:</span> Estado "Pendiente de validación"
+                                hasta que admin apruebe.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN V2 -->
+        <section class="section-backlog">
+            <h2 class="title-v2"> 3. Release V2 (Marketing & Fidelización — 10 Historias de Usuario)</h2>
+            <div class="table-responsive">
+                <table class="backlog-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 75px;">ID</th>
+                            <th style="width: 130px;">Épica</th>
+                            <th>Historia de Usuario</th>
+                            <th>Criterios de Aceptación (Caso Feliz / Infeliz)</th>
+                            <th style="width: 50px;">SP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="id-cell">HU-08.1</td>
+                            <td>Recomendaciones</td>
+                            <td><strong>Como</strong> cliente comprador,<br><strong>quiero</strong> ver sugerencias de
+                                productos según mi historial de compra,<br><strong>para</strong> descubrir prendas
+                                afines a mis gustos.</td>
+                            <td><span class="happy">✔ Feliz:</span> Bloque "También te podría gustar" en el
+                                inicio.<br><span class="unhappy">✖ Infeliz:</span> Muestra productos más vendidos si no
+                                hay historial previo.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-08.2</td>
+                            <td>Recomendaciones</td>
+                            <td><strong>Como</strong> administrador de marketing,<br><strong>quiero</strong> destacar
+                                productos sugeridos en la portada,<br><strong>para</strong> promocionar ropa de
+                                temporada.</td>
+                            <td><span class="happy">✔ Feliz:</span> Banner de productos destacados
+                                configurable.<br><span class="unhappy">✖ Infeliz:</span> Ocultamiento automático de
+                                ítems sin stock disponible.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-10.1</td>
+                            <td>Experiencia</td>
+                            <td><strong>Como</strong> cliente comprador,<br><strong>quiero</strong> que la interfaz se
+                                adapte perfectamente a celulares y tablets,<br><strong>para</strong> comprar cómodamente
+                                desde cualquier dispositivo.</td>
+                            <td><span class="happy">✔ Feliz:</span> Layout <em>responsive</em> optimizado para
+                                touch.<br><span class="unhappy">✖ Infeliz:</span> Detección de velocidad lenta carga
+                                versión ligera.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-10.2</td>
+                            <td>Experiencia</td>
+                            <td><strong>Como</strong> equipo de producto,<br><strong>quiero</strong> medir la tasa de
+                                abandono en el checkout,<br><strong>para</strong> optimizar el proceso de compra.</td>
+                            <td><span class="happy">✔ Feliz:</span> Eventos analíticos registrados por cada
+                                etapa.<br><span class="unhappy">✖ Infeliz:</span> Alerta si la tasa de errores en
+                                checkout supera el 5%.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-14.5</td>
+                            <td>Pago</td>
+                            <td><strong>Como</strong> cliente comprador,<br><strong>quiero</strong> pagar con Tarjeta de
+                                Crédito en cuotas,<br><strong>para</strong> financiar mis compras de mayor valor.</td>
+                            <td><span class="happy">✔ Feliz:</span> Selección de cuotas y procesamiento vía
+                                pasarela.<br><span class="unhappy">✖ Infeliz:</span> Mensaje claro de rechazo bancario
+                                si se excede el cupo.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-17.1</td>
+                            <td>Fidelización</td>
+                            <td><strong>Como</strong> sistema,<br><strong>quiero</strong> categorizar a los clientes en
+                                niveles (Bronce, Plata, Diamante, Premium),<br><strong>para</strong> premiar su volumen
+                                de compra anual.</td>
+                            <td><span class="happy">✔ Feliz:</span> Asignación y cambio de nivel automático según gasto
+                                acumulado.<br><span class="unhappy">✖ Infeliz:</span> Notificación preventiva si el
+                                cliente está cerca de bajar de nivel.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-17.2</td>
+                            <td>Fidelización</td>
+                            <td><strong>Como</strong> cliente fidelizado,<br><strong>quiero</strong> que se apliquen
+                                automáticamente mis descuentos promocionales,<br><strong>para</strong> obtener el
+                                beneficio correspondiente a mi categoría.</td>
+                            <td><span class="happy">✔ Feliz:</span> Descuento visible desglosado en el total del
+                                carrito.<br><span class="unhappy">✖ Infeliz:</span> Bloqueo de acumulación de cupones si
+                                las bases lo restringen.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-21.1</td>
+                            <td>BI & Analítica</td>
+                            <td><strong>Como</strong> gerencia,<br><strong>quiero</strong> generar reportes periódicos
+                                de ventas por período,<br><strong>para</strong> evaluar la rentabilidad del negocio.
+                            </td>
+                            <td><span class="happy">✔ Feliz:</span> Exportación de reportes en gráficos y planillas
+                                Excel.<br><span class="unhappy">✖ Infeliz:</span> Filtros de fechas inconsistentes
+                                muestran advertencia.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-21.2</td>
+                            <td>BI & Analítica</td>
+                            <td><strong>Como</strong> encargado de logística,<br><strong>quiero</strong> ver reportes de
+                                efectividad de entregas por repartidor,<br><strong>para</strong> evaluar los tiempos de
+                                cumplimiento de rutas.</td>
+                            <td><span class="happy">✔ Feliz:</span> Métricas de % de entregas a tiempo por
+                                operador.<br><span class="unhappy">✖ Infeliz:</span> Alerta visual sobre repartidores
+                                con reclamos reiterados.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-22.1</td>
+                            <td>Admin Base</td>
+                            <td><strong>Como</strong> auditor del sistema,<br><strong>quiero</strong> un registro de
+                                logs de actividades administrativas,<br><strong>para</strong> rastrear quién modifica
+                                precios o permisos.</td>
+                            <td><span class="happy">✔ Feliz:</span> Historial inalterable de acciones con usuario y
+                                fecha.<br><span class="unhappy">✖ Infeliz:</span> Alerta inmediata ante intentos de
+                                eliminación masiva de datos.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECCIÓN VN -->
+        <section class="section-backlog">
+            <h2 class="title-vn">4. Release VN (Escalabilidad & Infraestructura — 13 Historias de Usuario)</h2>
+            <div class="table-responsive">
+                <table class="backlog-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 75px;">ID</th>
+                            <th style="width: 130px;">Épica</th>
+                            <th>Historia de Usuario</th>
+                            <th>Criterios de Aceptación (Caso Feliz / Infeliz)</th>
+                            <th style="width: 50px;">SP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="id-cell">HU-15.2</td>
+                            <td>Comunicación</td>
+                            <td><strong>Como</strong> cliente,<br><strong>quiero</strong> recibir avisos por
+                                WhatsApp/SMS sobre mi entrega,<br><strong>para</strong> recibir el paquete en persona.
+                            </td>
+                            <td><span class="happy">✔ Feliz:</span> Mensaje automatizado cuando el repartidor esté a
+                                &lt;3 km.<br><span class="unhappy">✖ Infeliz:</span> Fallback automático a correo
+                                electrónico si falla la API.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-16.2</td>
+                            <td>Bodega</td>
+                            <td><strong>Como</strong> encargado de compras,<br><strong>quiero</strong> recibir alertas
+                                de stock mínimo de prendas,<br><strong>para</strong> realizar nuevas importaciones desde
+                                China a tiempo.</td>
+                            <td><span class="happy">✔ Feliz:</span> Notificación cuando una prenda quede con &lt;5
+                                unidades.<br><span class="unhappy">✖ Infeliz:</span> Silenciar alertas de productos
+                                descontinuados.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-18.1</td>
+                            <td>Bodega</td>
+                            <td><strong>Como</strong> sistema,<br><strong>quiero</strong> generar un código QR / Código
+                                de Barras por pedido,<br><strong>para</strong> agilizar el escaneo en bodega.</td>
+                            <td><span class="happy">✔ Feliz:</span> Impresión de etiqueta logística con lectura láser
+                                rápida.<br><span class="unhappy">✖ Infeliz:</span> Alerta sonora si el código escaneado
+                                no corresponde.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-19.1</td>
+                            <td>RRHH & Turnos</td>
+                            <td><strong>Como</strong> administrador,<br><strong>quiero</strong> gestionar las cuentas y
+                                perfiles de los trabajadores,<br><strong>para</strong> habilitar o deshabilitar accesos
+                                al personal.</td>
+                            <td><span class="happy">✔ Feliz:</span> Alta/Baja inmediata de usuarios internos.<br><span
+                                    class="unhappy">✖ Infeliz:</span> Bloqueo de auto-eliminación para la cuenta
+                                Administrador Principal.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-19.2</td>
+                            <td>RRHH & Turnos</td>
+                            <td><strong>Como</strong> administrador,<br><strong>quiero</strong> crear y publicar los
+                                turnos formales del personal,<br><strong>para</strong> solucionar la inasistencia y
+                                falta de cobertura en bodega.</td>
+                            <td><span class="happy">✔ Feliz:</span> Calendario de turnos visible para los
+                                empleados.<br><span class="unhappy">✖ Infeliz:</span> Alerta si un turno queda con menos
+                                del personal mínimo requerido.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-20.1</td>
+                            <td>Logística</td>
+                            <td><strong>Como</strong> logístico,<br><strong>quiero</strong> integrar las APIs de
+                                empresas de reparto externas (Starken/Chilexpress),<br><strong>para</strong> automatizar
+                                órdenes de flete a regiones.</td>
+                            <td><span class="happy">✔ Feliz:</span> Creación automática de orden de flete y número de
+                                seguimiento.<br><span class="unhappy">✖ Infeliz:</span> Reintento manual si la API
+                                externa no responde.</td>
+                            <td class="sp-cell">8</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-23.1</td>
+                            <td>Seguridad</td>
+                            <td><strong>Como</strong> oficial de seguridad,<br><strong>quiero</strong> cifrado HTTPS de
+                                extremo a extremo y tokenización de pagos,<br><strong>para</strong> cumplir con
+                                estándares bancarios.</td>
+                            <td><span class="happy">✔ Feliz:</span> Certificado SSL/TLS activo con calificación
+                                A+.<br><span class="unhappy">✖ Infeliz:</span> Bloqueo de conexiones inseguras HTTP.
+                            </td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-23.2</td>
+                            <td>Seguridad</td>
+                            <td><strong>Como</strong> administrador,<br><strong>quiero</strong> asignar permisos basados
+                                en roles (RBAC),<br><strong>para</strong> que cada empleado acceda solo a lo referente a
+                                su trabajo.</td>
+                            <td><span class="happy">✔ Feliz:</span> Bodeguero solo ve pedidos; Vendedor solo ve
+                                ventas.<br><span class="unhappy">✖ Infeliz:</span> Pantalla de "Acceso Denegado" al
+                                intentar entrar a secciones no autorizadas.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-24.1</td>
+                            <td>Infraestructura</td>
+                            <td><strong>Como</strong> arquitecto de software,<br><strong>quiero</strong> una
+                                infraestructura capaz de soportar +500 usuarios simultáneos,<br><strong>para</strong>
+                                evitar caídas del sitio durante campañas publicitarias.</td>
+                            <td><span class="happy">✔ Feliz:</span> Pruebas de carga exitosas con tiempos de respuesta
+                                &lt;1.5s.<br><span class="unhappy">✖ Infeliz:</span> Auto-escalado de servidores al
+                                superar el 80% de CPU.</td>
+                            <td class="sp-cell">8</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-24.2</td>
+                            <td>Infraestructura</td>
+                            <td><strong>Como</strong> gerencia,<br><strong>quiero</strong> una arquitectura preparada
+                                para expansión regional multi-bodega,<br><strong>para</strong> abrir centros de
+                                distribución en otras regiones de Chile.</td>
+                            <td><span class="happy">✔ Feliz:</span> Configuración de múltiples bodegas con inventario
+                                independiente.<br><span class="unhappy">✖ Infeliz:</span> Asignación automática de la
+                                bodega más cercana al cliente.</td>
+                            <td class="sp-cell">8</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-25.1</td>
+                            <td>Infraestructura</td>
+                            <td><strong>Como</strong> administrador de TI,<br><strong>quiero</strong> respaldos
+                                (backups) automáticos diarios de la base de datos,<br><strong>para</strong> garantizar
+                                la recuperación ante fallos del servidor.</td>
+                            <td><span class="happy">✔ Feliz:</span> Backup nocturno generado y almacenado en la
+                                nube.<br><span class="unhappy">✖ Infeliz:</span> Notificación de error si el respaldo no
+                                se completa exitosamente.</td>
+                            <td class="sp-cell">3</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-25.2</td>
+                            <td>Bodega & Ventas</td>
+                            <td><strong>Como</strong> sistema,<br><strong>quiero</strong> aplicar transacciones ACID
+                                (integridad venta-stock),<br><strong>para</strong> asegurar que nunca se confirme un
+                                pago si el stock falla.</td>
+                            <td><span class="happy">✔ Feliz:</span> Confirmación simultánea de cobro y reserva de
+                                inventario.<br><span class="unhappy">✖ Infeliz:</span> Rollback (reversión de dinero)
+                                automático si la reserva falla.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                        <tr>
+                            <td class="id-cell">HU-26.1</td>
+                            <td>Post Venta</td>
+                            <td><strong>Como</strong> cliente comprador,<br><strong>quiero</strong> solicitar
+                                devoluciones o reembolsos desde mi perfil,<br><strong>para</strong> gestionar cambios de
+                                talla o fallas de fábrica.</td>
+                            <td><span class="happy">✔ Feliz:</span> Flujo guiado para generar etiqueta de devolución
+                                gratis.<br><span class="unhappy">✖ Infeliz:</span> Rechazo automático si se supera el
+                                plazo legal de devolución.</td>
+                            <td class="sp-cell">5</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
